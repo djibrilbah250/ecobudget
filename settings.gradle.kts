@@ -25,3 +25,5 @@ dependencyResolutionManagement {
 rootProject.name = "EcoBudget"
 
 include(":app")
+include(":shared")
+include(":shared2")
