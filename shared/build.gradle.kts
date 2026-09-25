@@ -1,9 +1,9 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-// Support de Compose Multiplatform et génération de l'objet Res
+    // Support de Compose Multiplatform et génération de l'objet Res
     id("org.jetbrains.compose") version "1.6.11"
-// Compilateur Compose obligatoire depuis Kotlin 2.0+
+    // Compilateur Compose obligatoire depuis Kotlin 2.0+
     alias(libs.plugins.kotlin.compose)
 }
 
@@ -29,21 +29,26 @@ kotlin {
     // Dépendances communes
     sourceSets {
         commonMain.dependencies {
-// Asynchronisme et flux réactifs
+            // Asynchronisme et flux réactifs
             implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
 
-// Gestion de l'état UI et cycle de vie multiplateforme
+            // Gestion de l'état UI et cycle de vie multiplateforme
             implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel:2.8.0")
+            implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
+            implementation("org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose:2.8.0")
 
-// Manipulation multiplateforme des dates et heures
+            // Manipulation multiplateforme des dates et heures
             implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.0")
-// Ressources CMP (exposées à app) et Runtime Compose
+
+            // Composants et Runtime Compose Multiplatform
             api(compose.components.resources)
             implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.material3)
+            implementation(compose.ui)
+            implementation(compose.materialIconsExtended) // Requis pour Icons.Default.Add et Icons.Default.Check
         }
     }
-
-
 }
 
 // Configuration minimale requise par le plugin com.android.library
