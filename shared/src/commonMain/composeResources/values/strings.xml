@@ -9,7 +9,7 @@
     <string name="current_month_badge">En cours</string>
 
     <!-- Carte Budget Hero -->
-    <string name="budget_remaining_title">BUDGET RESTANT DISPONIBLE</string>
+    <string name="budget_remaining_title">BUDGET RESTANT</string>
     <string name="currency_fcfa">FCFA</string>
     <string name="total_spent_format">Total dépensé : %s FCFA</string>
     <string name="budget_usage_percent_format">%d%% consommé</string>

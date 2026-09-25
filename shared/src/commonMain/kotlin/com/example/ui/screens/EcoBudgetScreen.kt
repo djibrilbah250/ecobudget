@@ -407,7 +407,7 @@ private fun EcoBudgetOverviewCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = stringResource(Res.string.total_spent_format, totalSpent.formatFcfa()),
+                    text = "Dépensé : ${totalSpent.formatFcfa()} ${stringResource(Res.string.currency_fcfa)}",
                     style = MaterialTheme.typography.bodySmall.copy(
                         fontSize = 12.sp,
                         fontWeight = FontWeight.Medium
@@ -417,7 +417,7 @@ private fun EcoBudgetOverviewCard(
                 )
 
                 Text(
-                    text = stringResource(Res.string.budget_usage_percent_format, usagePercentage),
+                    text = "$usagePercentage% consommé",
                     style = MaterialTheme.typography.labelSmall.copy(
                         fontSize = 12.sp,
                         fontWeight = FontWeight.Bold
